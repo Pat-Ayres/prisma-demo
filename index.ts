@@ -31,6 +31,23 @@ async function main(): Promise<void> {
     student,
     assignment
   })
+
+  const newStudent = await prisma.student.create({
+    data: {
+      firstName: "Margot",
+      lastName: "Robbie",
+      Assignment: {
+        create: {
+          title: "Introduction"
+        }
+      }
+    },
+    include: {
+      Assignment: true
+    }
+  })
+
+  console.log(newStudent)
 }
 
 main()
