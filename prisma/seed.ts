@@ -15,6 +15,12 @@ async function main(): Promise<void> {
       lastName: "Cena"
     }
   })
+  await prisma.student.create({
+    data: {
+      firstName: "Dwayne",
+      lastName: "Johnson"
+    }
+  })
   await prisma.assignment.create({
     data: {
       title: "Master the Five Moves of Doom",
